@@ -41,13 +41,13 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </JFXButton>
+            <JFXButton layoutX="350.0" layoutY="2.0" onAction="#btnMinimize" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 50px;" text="🔻" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="741.0" prefWidth="443.0" text="1.0 v" textAlignment="CENTER" />
-      <JFXButton layoutX="346.0" layoutY="2.0" onAction="#btnMinimize" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 50px;" text="🔻" textFill="WHITE">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </JFXButton>
    </children>
 </AnchorPane>
