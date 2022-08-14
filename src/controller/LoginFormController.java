@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -34,16 +35,16 @@ public class LoginFormController {
         root.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                xOffset=event.getSceneX();
-                yOffset=event.getSceneY();
+                xOffset = event.getSceneX();
+                yOffset = event.getSceneY();
             }
         });
 
         root.setOnMouseDragged(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                stage.setX(event.getScreenX()-xOffset);
-                stage.setY(event.getScreenY()-yOffset);
+                stage.setX(event.getScreenX() - xOffset);
+                stage.setY(event.getScreenY() - yOffset);
             }
         });
         stage.setMinWidth(440);
@@ -58,10 +59,15 @@ public class LoginFormController {
     }
 
     public void btnClose(ActionEvent actionEvent) {
-
+        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+        stage.close();
     }
 
     public void btnMinimize(ActionEvent actionEvent) {
+
+        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+        // is stage minimizable into task bar. (true | false)
+        stage.setIconified(true);
 
     }
 }
