@@ -10,17 +10,17 @@
 
 <AnchorPane prefHeight="769.0" prefWidth="443.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ServerFormController">
    <children>
-      <TextField fx:id="txtMsgInput" layoutX="39.0" layoutY="703.0" prefHeight="35.0" prefWidth="288.0">
+      <TextField fx:id="txtMsgInput" layoutX="39.0" layoutY="703.0" prefHeight="45.0" prefWidth="288.0" style="-fx-background-radius: 20;">
          <padding>
             <Insets left="10.0" right="45.0" />
          </padding>
       </TextField>
-      <JFXButton layoutX="336.0" layoutY="704.0" onAction="#btnSend" prefHeight="35.0" prefWidth="68.0" style="-fx-background-color: #0984e3;" text="Send" textFill="WHITE">
+      <JFXButton layoutX="336.0" layoutY="706.0" onAction="#btnSend" prefHeight="37.0" prefWidth="68.0" style="-fx-background-color: #0984e3; -fx-background-radius: 20;" text="Send" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="281.0" layoutY="703.0" prefHeight="38.0" prefWidth="45.0" text="📷">
+      <JFXButton buttonType="RAISED" layoutX="281.0" layoutY="702.0" prefHeight="45.0" prefWidth="45.0" ripplerFill="#0984e3" style="-fx-background-radius: 0 20 20 0;" text="📷">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -48,7 +48,7 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <Label layoutX="168.0" layoutY="61.0" text="Server">
+      <Label layoutX="168.0" layoutY="60.0" text="Server">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
