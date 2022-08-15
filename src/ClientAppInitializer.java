@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -47,6 +48,7 @@ public class AppInitializer extends Application {
         primaryStage.setMaxWidth(458);
         primaryStage.setMaxHeight(769);
         primaryStage.setScene(scene);
+        scene.setFill(Color.TRANSPARENT);
         primaryStage.show();
 
     }
