@@ -5,6 +5,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.ClientConnection;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.Socket;
 
 /**
  * @author Helitha Sri
@@ -27,7 +32,23 @@ public class UserFormController {
         stage.setIconified(true);
     }
 
-    public void btnSend(ActionEvent actionEvent) {
-        
+    public void btnSend(ActionEvent actionEvent) throws IOException {
+        PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
+        printWriter.println(txtMsgInput.getText());
+        txtMsgDisplay.appendText("laki : "+txtMsgInput.getText().trim()+"\n");
+        printWriter.flush();
     }
+
+    Socket socket = null;
+    public void initialize() throws IOException {
+            socket = new Socket("localhost", 5000);
+
+
+    }
+
+    /*public void broadcast(String message) {
+        for (ClientConnection clientConnection : this.connectionList) {
+            clientConnection.sendMessage(message);
+        }
+    }*/
 }

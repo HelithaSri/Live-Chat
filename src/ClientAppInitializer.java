@@ -16,7 +16,7 @@ import java.net.URL;
  * @project Live Chat
  */
 
-public class AppInitializer extends Application {
+public class ClientAppInitializer extends Application {
     private double xOffset = 0;
     private double yOffset = 0;
 

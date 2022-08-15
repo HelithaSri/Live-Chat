@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -51,7 +52,7 @@ public class LoginFormController {
         stage.setMinHeight(769);
         stage.setMaxWidth(440);
         stage.setMaxHeight(769);
-
+        scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
