@@ -17,10 +17,12 @@ public class ClientConnection implements Runnable {
     private BufferedReader bufferedReader;
     private BufferedWriter bufferedWriter;
 //    private PrintWriter printWriter;
+    private String user;
 
-    public ClientConnection(Socket socket, ServerFormController server) {
+    public ClientConnection(Socket socket, ServerFormController server, String user) {
         this.accept = socket;
         this.server = server;
+        this.user = user;
     }
 
     @Override
@@ -34,7 +36,7 @@ public class ClientConnection implements Runnable {
                 String readLine = bufferedReader.readLine();
                 System.out.println("Line : " + readLine);
                 server.broadcast(readLine);
-                server.txtMsgDisplay.appendText("client : " + readLine + "\n");
+                server.txtMsgDisplay.appendText(readLine + "\n");
             }
 
         } catch (IOException e) {

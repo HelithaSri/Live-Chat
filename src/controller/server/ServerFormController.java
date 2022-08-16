@@ -7,6 +7,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.ClientConnection;
+import util.ConnectionUtil;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -27,7 +28,9 @@ public class ServerFormController implements Initializable {
     public TextField txtMsgInput;
     public TextArea txtMsgDisplay;
     List<ClientConnection> connectionList = new ArrayList<>();
+
     ServerSocket serverSocket;
+
     public void btnSend(ActionEvent actionEvent) {
     }
 
@@ -47,14 +50,14 @@ public class ServerFormController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        new Thread(()->{
+        new Thread(() -> {
             try {
-                serverSocket = new ServerSocket(5000);
+                serverSocket = new ServerSocket(ConnectionUtil.port);
                 System.out.println("started");
-                while (true){
+                while (true) {
                     Socket accept = serverSocket.accept();
                     System.out.println("Connect new");
-                    ClientConnection connection = new ClientConnection(accept, this);
+                    ClientConnection connection = new ClientConnection(accept, this,"user");
                     connectionList.add(connection);
 
                     Thread thread = new Thread(connection);

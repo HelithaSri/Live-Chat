@@ -1,7 +1,4 @@
-package model;
-
-import controller.UserFormController;
-import javafx.application.Platform;
+package controller.server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,16 +11,21 @@ import java.net.Socket;
  * @project Live Chat
  */
 
-public class TaskReadThread implements Runnable{
+public class TaskReadThread implements Runnable {
 
     Socket socket;
     UserFormController client;
     BufferedReader reader;
 
+    public TaskReadThread(Socket socket, UserFormController client) {
+        this.socket = socket;
+        this.client = client;
+    }
+
     @Override
     public void run() {
-        while(true){
-            try{
+        while (true) {
+            try {
                 reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 String message = reader.readLine();
 
@@ -32,13 +34,21 @@ public class TaskReadThread implements Runnable{
                     String readLine = bufferedReader.readLine();
                     System.out.println(readLine);*/
 
-                Platform.runLater(()->{
+                /*Platform.runLater(()->{
                     System.out.println("message : "+message);
                     client.txtMsgDisplay.appendText(message+"\n");
-                });
-
+                });*/
+                client.txtMsgDisplay.appendText(message + "\n");
             } catch (IOException e) {
                 e.printStackTrace();
+                try {
+                    socket.close();
+                    reader.close();
+                    System.out.println("close");
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                System.out.println("error");
             }
         }
     }
