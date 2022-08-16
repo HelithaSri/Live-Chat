@@ -42,6 +42,10 @@ public class UserFormController {
         printWriter.println(userName + " : " + txtMsgInput.getText());
 //        txtMsgDisplay.appendText("laki : "+txtMsgInput.getText().trim()+"\n");
         printWriter.flush();
+
+        txtMsgInput.clear();
+        txtMsgInput.requestFocus();
+
     }
 
     public void initialize() throws IOException {
