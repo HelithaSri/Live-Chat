@@ -1,4 +1,4 @@
-package controller.server;
+package controller.client;
 
 import java.io.BufferedReader;
 import java.io.IOException;

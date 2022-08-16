@@ -1,6 +1,6 @@
-package model;
+package controller.server;
 
-import controller.ServerFormController;
+import controller.server.ServerFormController;
 
 import java.io.*;
 import java.net.Socket;

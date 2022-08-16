@@ -24,11 +24,13 @@ import java.io.IOException;
 public class LoginFormController {
     public JFXTextField txtLoginName;
     public AnchorPane logingPane;
-
+    public String userName;
     private double xOffset = 0;
     private double yOffset = 0;
 
     public void btnLogin(ActionEvent actionEvent) throws IOException {
+        userName = txtLoginName.getText().isEmpty() ? "Unknown" : txtLoginName.getText();
+        Data.userName = userName;
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../view/UserForm.fxml"));
         Scene scene = new Scene(root);
