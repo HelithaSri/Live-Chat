@@ -8,8 +8,8 @@
 * Java Socket
 * CSS
 
-![first ui](screenshots/1.jpg)
-![login ui](screenshots/2.jpg)
-![management first ui](screenshots/3.jpg)
-![add vehicle ui](screenshots/4.jpg)
-![add driver ui](screenshots/5.jpg)
+![Server and Client Start ui](screenshots/1.jpg)
+![Client login ui](screenshots/2.jpg)
+![first send msg](screenshots/3.jpg)
+![2nd send msg](screenshots/4.jpg)
+![3rd send msg](screenshots/5.jpg)
