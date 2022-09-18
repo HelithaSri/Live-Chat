@@ -12,11 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-/**
- * @author Helitha Sri
- * @created 8/14/2022 - 11:18 AM
- * @project Live Chat
- */
+
 
 public class UserFormController {
     public TextField txtMsgInput;
@@ -51,7 +47,7 @@ public class UserFormController {
     public void initialize() throws IOException {
         userName = Data.userName;
         System.out.println("userName is : " + userName);
-        socket = new Socket(ConnectionUtil.host, ConnectionUtil.port);
+        socket = new Socket(ConnectionUtil.host,ConnectionUtil.port);
         txtMsgDisplay.appendText("Connect. \n");
 //            txtMsgDisplay.appendText( Data.userName+"\n");
         printWriter = new PrintWriter(socket.getOutputStream());

@@ -10,11 +10,7 @@ import javafx.stage.StageStyle;
 
 import java.net.URL;
 
-/**
- * @author Helitha Sri
- * @created 8/14/2022 - 11:54 AM
- * @project Live Chat
- */
+
 
 public class ClientAppInitializer extends Application {
     private double xOffset = 0;

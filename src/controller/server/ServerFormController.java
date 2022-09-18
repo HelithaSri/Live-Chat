@@ -26,6 +26,7 @@ public class ServerFormController implements Initializable {
 
     public TextField txtMsgInput;
     public TextArea txtMsgDisplay;
+
     List<ClientConnection> connectionList = new ArrayList<>();
 
     ServerSocket serverSocket;
@@ -56,7 +57,7 @@ public class ServerFormController implements Initializable {
                 while (true) {
                     Socket accept = serverSocket.accept();
                     System.out.println("Connect new");
-                    ClientConnection connection = new ClientConnection(accept, this,"user");
+                    ClientConnection connection = new ClientConnection(accept, this);
                     connectionList.add(connection);
 
                     Thread thread = new Thread(connection);

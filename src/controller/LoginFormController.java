@@ -15,11 +15,6 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-/**
- * @author Helitha Sri
- * @created 8/14/2022 - 10:36 AM
- * @project Live Chat
- */
 
 public class LoginFormController {
     public JFXTextField txtLoginName;
@@ -31,10 +26,13 @@ public class LoginFormController {
     public void btnLogin(ActionEvent actionEvent) throws IOException {
         userName = txtLoginName.getText().isEmpty() ? "Unknown" : txtLoginName.getText();
         Data.userName = userName;
+
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../view/UserForm.fxml"));
         Scene scene = new Scene(root);
+
         stage.initStyle(StageStyle.TRANSPARENT); //Use For Boarder TRANSPARENT
+
         root.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {

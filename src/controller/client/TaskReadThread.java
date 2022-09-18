@@ -5,11 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
-/**
- * @author Helitha Sri
- * @created 8/15/2022 - 4:40 PM
- * @project Live Chat
- */
+
 
 public class TaskReadThread implements Runnable {
 
@@ -38,6 +34,7 @@ public class TaskReadThread implements Runnable {
                     System.out.println("message : "+message);
                     client.txtMsgDisplay.appendText(message+"\n");
                 });*/
+
                 client.txtMsgDisplay.appendText(message + "\n");
             } catch (IOException e) {
                 e.printStackTrace();

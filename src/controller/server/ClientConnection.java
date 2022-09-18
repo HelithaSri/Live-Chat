@@ -12,17 +12,19 @@ import java.net.Socket;
  */
 
 public class ClientConnection implements Runnable {
+
     private final Socket accept;
     private final ServerFormController server;
+
     private BufferedReader bufferedReader;
     private BufferedWriter bufferedWriter;
 //    private PrintWriter printWriter;
-    private String user;
 
-    public ClientConnection(Socket socket, ServerFormController server, String user) {
+
+    public ClientConnection(Socket socket, ServerFormController server) {
         this.accept = socket;
         this.server = server;
-        this.user = user;
+
     }
 
     @Override
